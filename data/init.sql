@@ -1,0 +1,15 @@
+CREATE DATABASE php_site;
+
+use php_site;
+
+CREATE TABLE users (
+	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+	firstname VARCHAR(30) NOT NULL,
+	lastname VARCHAR(30) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	age INT(3),
+	location VARCHAR(50),
+	date TIMESTAMP
+);
+
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES ON php_site.* TO 'phpsiteuser'@'localhost' IDENTIFIED BY 'phpsiteuser';
